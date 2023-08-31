@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    body {
+        background-image:linear-gradient( rgba(6, 8, 14, 0.7),rgba(6, 8, 14, 0.7)),url(WhatsApp\ Image\ 2023-08-31\ at\ 00.08.39.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="card bg-light p-2" style="max-width:20rem;text-align:center; opacity: 0.8;border-radius: 12px; ">
+        <div class="card-body">
+            <h5 class="card-title mb-2" style="font-size:xx-large;">يجب تنزيل التطبيق لمتابعه المشاهده</h5>
+            <button class="btn btn-primary btn-lg m-2" id="redirectBtn">تثبيت</button>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById("redirectBtn").addEventListener("click", function() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    
+    if (/android/i.test(userAgent)) {
+        window.location.href = "https://www.facebook.com"; // Replace with your Android website URL
+    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = "https://www.google.com"; // Replace with your iOS website URL
+    }
+    });
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
